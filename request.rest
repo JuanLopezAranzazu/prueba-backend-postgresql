@@ -1,0 +1,47 @@
+GET http://localhost:3000/api/v1/users 
+
+###
+
+POST http://localhost:3000/api/v1/users
+Content-Type: application/json
+
+{
+  "name": "JUAN LOPEZ",
+  "email": "juanlopezaranzazu@gmail.com",
+  "role": "admin",
+  "password": "root123",
+  "pointSale": 1
+}
+
+###
+
+GET http://localhost:3000/api/v1/products 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpVQU4gTE9QRVoiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NjQ4MzA5ODQsImV4cCI6MTY2NDkxNzM4NH0.oqngePE8tt0JBV5L2ymik-x3mKX1egSMIs97KnaR4dk
+
+###
+
+GET http://localhost:3000/api/v1/products/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpVQU4gTE9QRVoiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NjQ4MzA5ODQsImV4cCI6MTY2NDkxNzM4NH0.oqngePE8tt0JBV5L2ymik-x3mKX1egSMIs97KnaR4dk
+
+###
+
+POST http://localhost:3000/api/v1/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpVQU4gTE9QRVoiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NjQ4MzA5ODQsImV4cCI6MTY2NDkxNzM4NH0.oqngePE8tt0JBV5L2ymik-x3mKX1egSMIs97KnaR4dk
+
+{
+  "name": "Keyboard",
+  "price": 124.67,
+  "stock": 15,
+  "category": 1
+}
+
+###
+
+POST http://localhost:3000/api/v1/auth
+Content-Type: application/json
+ 
+{
+  "email": "juanlopezaranzazu@gmail.com",
+  "password": "root123"
+}
