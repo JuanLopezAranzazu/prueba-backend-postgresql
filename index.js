@@ -17,10 +17,12 @@ app.get("/", function (req, res) {
 const userRouter = require("./routes/user.router");
 const productRouter = require("./routes/product.router");
 const authRouter = require("./routes/auth.router");
+const saleRouter = require("./routes/sale.router");
 
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/products", productRouter);
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/sales", saleRouter);
 
 app.use(handleErrors);
 

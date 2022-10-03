@@ -61,6 +61,26 @@ class UserService {
       );
     });
   }
+
+  updateProduct(productId, dataForProduct) {
+    const { name, price, stock, category } = dataForProduct;
+    console.log(productId, dataForProduct);
+    return new Promise((resolve, reject) => {
+      this.pool.query(
+        'UPDATE public."product" SET product_name = $1, product_price = $2, product_stock = $3, category_id = $4 WHERE product_id = $5',
+        [name, price, stock, category, productId],
+        (err, res) => {
+          if (err) {
+            console.log(err);
+            reject(err);
+          } else {
+            console.log(res);
+            resolve(res);
+          }
+        }
+      );
+    });
+  }
 }
 
 module.exports = UserService;

@@ -57,4 +57,32 @@ productRouter.post(
   }
 );
 
+productRouter.put(
+  "/:id",
+  verifyToken,
+  checkRoles("admin"),
+  async (req, res, next) => {
+    try {
+      const { body, params } = req;
+      const { name, price, stock, category } = body;
+      const { id } = params;
+
+      const dataForProduct = {
+        name,
+        price,
+        stock,
+        category,
+      };
+      const updateProduct = await productService.updateProduct(
+        id,
+        dataForProduct
+      );
+
+      res.status(200).json(updateProduct);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
 module.exports = productRouter;
